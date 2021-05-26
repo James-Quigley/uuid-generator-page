@@ -1,4 +1,4 @@
-import uuid from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid/v4';
 import ClipboardJS from 'clipboard';
 
 const clipboard = new ClipboardJS('#copy');
@@ -14,7 +14,7 @@ const h = document.getElementById('history');
 const history = [];
 
 button.onclick = function(event) {
-    const u = uuid();
+    const u = uuidv4();
     text.innerHTML = u;
     history.unshift(u);
     if (history.length > 10){
